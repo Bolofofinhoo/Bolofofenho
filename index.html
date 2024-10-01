@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário</title>
+    <style>
+        body {
+            text-align: center; /* Centraliza o conteúdo */
+            background-color: lightblue; /* Cor de fundo */
+        }
+        img {
+            width: 500px; /* Tamanho da imagem */
+            cursor: pointer; /* Muda o cursor para mãozinha ao passar sobre a imagem */
+            animation: balanco 2s infinite; /* Animação de balanço */
+        }
+        /* Animação de balanço para o bolo */
+        @keyframes balanco {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        #mensagem {
+            display: none; /* Oculta a mensagem inicialmente */
+            font-size: 30px;
+            font-weight: bold;
+            color: darkblue;
+            animation: piscar 1s infinite; /* Aplica a animação de piscar */
+        }
+
+        /* Animação de piscar e mudança de cor */
+        @keyframes piscar {
+            0% { color: red; }
+            25% { color: orange; }
+            50% { color: yellow; }
+            75% { color: green; }
+            100% { color: blue; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Clique aqui!</h1>
+
+    <!-- Imagem do bolo -->
+    <img src="bolo.png" alt="Bolo de Aniversário" id="bolo">
+
+    <!-- Mensagem oculta -->
+    <p id="mensagem">Feliz Aniversário minha irmã querida!!! 🎉🎂</p>
+
+    <script>
+        // Pega o elemento da imagem e da mensagem
+        const bolo = document.getElementById('bolo');
+        const mensagem = document.getElementById('mensagem');
+
+        // Função para mostrar a mensagem quando clicar no bolo
+        bolo.addEventListener('click', function() {
+            mensagem.style.display = 'block'; // Exibe a mensagem
+        });
+    </script>
+</body>
+</html>
